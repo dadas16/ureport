@@ -471,7 +471,7 @@ class NewPollForm(forms.Form): # pragma: no cover
     name = forms.CharField(max_length=32, required=True)
     
     def __init__(self, data=None, **kwargs):
-        self.request = kwargs.pop('request')
+        self.request = kwargs.pop('request', None)
         if data:
             forms.Form.__init__(self, data, **kwargs)
         else:
@@ -548,7 +548,7 @@ class AssignResponseGroupForm(ActionForm):
     # authsites app, see github.com/daveycrockett/authsites).
     # This does, however, also make the polling app independent of authsites.
     def __init__(self, data=None, **kwargs):
-        self.request = kwargs.pop('request')
+        self.request = kwargs.pop('request',None)
         self.access = None
         if 'access' in kwargs:
             self.access = kwargs.pop('access')

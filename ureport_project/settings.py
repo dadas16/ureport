@@ -36,9 +36,10 @@ for path in paths:
     else:
         sys.path.append(os.path.join(filedir, path))
         
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-
+USSD_ENABLED = False
+ADMIN_UNREGISTER = True
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -47,10 +48,10 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'ureport_project.db',
-        'USER': '',
-        'PASSWORD': '',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'report1',
+        'USER': 'helpdeskadmin',
+        'PASSWORD': 'Kigabo47**',
         'HOST': '',
         'PORT': '',
     }

@@ -1,50 +1,92 @@
 {% extends "ureport_layout.html" %}
 
+{% block javascripts %}
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="http://openlayers.org/api/2.11-rc1/OpenLayers.js?1123"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}generic/javascripts/map.js"></script>
+    {{ block.super }}
+{% endblock %}
+
+{% block top_js %}
+    <script language="javascript">
+  $(document).ready(function() {
+        $('#viz').load('/bestviz/?pks=l');
+    });
+    </script>
+{% endblock %}
+
 {% block content %}
-<div class="how_to_join">
- <h3 class="about_header">How To Join <img class="ab_img" src="{{ MEDIA_URL }}ureport/images/shout_out.png"/></h3>
+<div class="resultats">
 
+	<div class="result_gauch">
+		<div class="result_gauch1">
+		SONDAGES
+		</div>
+		<div class="result_gauc">
+		 <h5> Showing 8 out to 21 results<br /></h5>
+		 <h6>57% des U-reporters savent que l'utisation des moustiquaires contre le paludisme<br /> est tres importante pour pallier a ce fleau</h6>
+		</div>
+		
+		<div class="result_gauc1">
+		 <h6>57% des U-reporters savent que l'utisation des moustiquaires contre le paludisme<br /> est tres importante pour pallier a ce fleau</h6>
 
-<div class="step_2 step">
-<p class="step_txt"><span class="step_name">
-    Step 2 </span>
+		</div>
+		
+		<div class="result_gauc2">
+		<h6>57% des U-reporters savent que l'utisation des moustiquaires contre le paludisme<br /> est tres importante pour pallier a ce fleau</h6>
 
-    You will receive a greeting message and a series of quetions , to find out more about you
-    (Ureport needs to know your District but all other quetions are optional)
+		</div>
+		
+		<div class="result_gauc3">
+		 <h6>57% des U-reporters savent que l'utisation des moustiquaires contre le paludisme<br /> est tres importante pour pallier a ce fleau</h6>
 
-    </p>
-     <img src="{{ MEDIA_URL }}ureport/images/step2.png">
+		</div>
+		
+		<div class="result_gauc4">
+		 <h6>57% des U-reporters savent que l'utisation des moustiquaires contre le paludisme<br /> est tres importante pour pallier a ce fleau</h6>
 
-</div>
+		</div>
+		
+		<div class="result_gauc5">
+		 <h6>57% des U-reporters savent que l'utisation des moustiquaires contre le paludisme<br /> est tres importante pour pallier a ce fleau</h6>
 
-    <div class="step_1 step">
-    <p class="step_txt"><span class="step_name" >Step 1 </span>Text the word Join to 8500
-    - all Ureport SMSs are free!
+		</div>
+		
+		<div class="result_gauc6">
+		 <h6>57% des U-reporters savent que l'utisation des moustiquaires contre le paludisme<br /> est tres importante pour pallier a ce fleau</h6>
 
-    </p>
-     <img src="{{ MEDIA_URL }}ureport/images/step1.png">
-
-</div>
-<div class="step_4 step">
-<p class="step_txt"><span class="step_name">
-    Step 4 </span>
-
-    As a Ureporter, you will get weekly poll results, and meaningful information to assist you to enact change in
-    your community.
-
-    </p>
-    <img src="{{ MEDIA_URL }}ureport/images/step4.png">
-</div>
-<div class="step_3 step">
-<p class="step_txt"><span class="step_name" >
-    Step 3 </span>
-
-    After you answer the quetions about you, you are a member of Ureport!
-
-    </p>
-     <img src="{{ MEDIA_URL }}ureport/images/step3.png">
-</div>
-
+		</div>
+		
+		<div class="result_gauch3">
+			<a href="http://www.facebook.com"><img src="{{ STATIC_URL }}images/face.png"/></a>
+			<a href="http://www.google.com"><img src="{{ STATIC_URL }}images/gplus.png"/></a>
+			<a href="http://www.twitter.com"><img src="{{ STATIC_URL }}images/twit.png"/></a>
+			<a href="http://www.youtube.com"><img src="{{ STATIC_URL }}images/you.png"/></a>
+		</div>		
+	</div>
+	
+	
+	
+	<div class="result_droite">
+		<div class="result_droite1">
+			SONDAGES RECENTS
+		</div>
+		<div class="result_droite2">
+			Le contenu d'ici viendra de la base de donnees.
+		</div>
+		<div class="result_droite3">
+		
+		</div>
+		<div class="result_droite4">
+			DEVENIR UN UREPORTER <br>
+			    <strong> Joindre Maintenant!</strong><br>
+			    ENVOYER "S'INSCRIRE" <br> AU 132 <br>
+			    C'EST GRATUIT.
+			<div class="result_droite4_image1">	  	
+					<img src="{{ STATIC_URL }}images/telephone.png"/>
+			</div>	
+		</div>
+	</div>
 
 </div>
 {%endblock%}

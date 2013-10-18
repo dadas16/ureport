@@ -28,7 +28,7 @@ Messages - {{ block.super }}
     <div class="modal hide" id="mesg_st">
     </div>
 
- <a href="javascript:void(0)" onclick="$('#mesg_st').load('{% url "set_group_rules" %}');$('#mesg_st').show()" style="float:left" class="btn">Add Autoreg Group Rules</a>
+ <a href="javascript:void(0)" onclick="$('#mesg_st').load({% url set_group_rules %});$('#mesg_st').show()" style="float:left" class="btn">Add Autoreg Group Rules</a>
 
 </div>
 {{ block.super }}
