@@ -26,3 +26,30 @@ from django.db import transaction
 from django.contrib.auth.models import Group, User #, Message
 from ureport.models import UPoll
 import logging, datetime
+
+
+def view_scouts_responses(req, poll):
+
+
+    responses= Response.objects.filter(contact__groups__name='scout',poll__pk=poll)
+    template = 'ureport/scout_poll_result.html'
+    return render_to_response(template, {
+        'responses': responses,
+        })
+
+   
+def view_guides_responses(req, poll):
+
+    responses= Response.objects.filter(contact__groups__name='guide',poll__pk=poll)
+    template = 'ureport/guide_poll_result.html'
+    return render_to_response(template, {
+        'responses': responses,
+        })
+        
+def view_redcross_responses(req, poll):
+
+    responses= Response.objects.filter(contact__groups__name='redcross',poll__pk=poll)
+    template = 'ureport/redcross_poll_result.html'
+    return render_to_response(template, {
+        'responses': responses,
+        })
