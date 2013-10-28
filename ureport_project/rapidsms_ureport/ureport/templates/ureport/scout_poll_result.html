@@ -1,1 +1,8 @@
-<h1>You are on the scout poll result page</h1>
+<ul>
+        <h2>Responses from Scout to a given poll</h2>
+{% for r in responses %}
+<li>
+    {{ r.message }}
+</li>
+{% endfor %}
+</ul>
