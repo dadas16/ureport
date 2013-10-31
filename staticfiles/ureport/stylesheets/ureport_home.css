@@ -1204,8 +1204,19 @@ background-color: darkred;
 	float: right; 
 	margin-top: -23px; 
 	} 
-
-
+	
+/*poll result pages */
+.scout_results_principale{
+        height: 1000px;
+        color:gray;
+}
+.guide_results_principale{
+        height: 1000px;
+        
+}
+.redcross_results_principale{
+        height: 1000px;
+}
 
 	
 
