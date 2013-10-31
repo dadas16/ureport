@@ -50,7 +50,7 @@ def view_guides_responses(req, pol):
     template = 'ureport/guide_poll_result.html'
     return render_to_response(template, {
         'responses': responses,
-        'total_members':members,
+        'total_ureporters':members,
         'poll':p}
         )
         
@@ -62,6 +62,6 @@ def view_redcross_responses(req, pol):
     template = 'ureport/redcross_poll_result.html'
     return render_to_response(template, {
         'responses': responses,
-        'total_members':members,
+        'total_ureporters':members,
         'poll':p}
         )
