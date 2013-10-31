@@ -153,7 +153,7 @@ ROOT_URLCONF = 'ureport_project.urls'
 WSGI_APPLICATION = 'ureport_project.wsgi.application'
 
 TEMPLATE_DIRS = (
-     os.path.join(PROJECT_PATH, 'templates'),
+   #  os.path.join(PROJECT_PATH, 'templates'),
 )
 
 FIXTURE_DIRS = (
