@@ -7,7 +7,7 @@ PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__),
 PROJECT_ROOT = os.path.abspath(os.path.join(PROJECT_PATH, os.pardir))
 
 paths = [
-#         "rapidsms",
+         "rapidsms",
          "rapidsms_ureport",
          "rapidsms_polls",
          "django_eav",
@@ -93,7 +93,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'public', 'static')
+STATIC_ROOT = os.path.join(PROJECT_PATH, 'public', 'static')
 
 DOCUMENT_ROOT = PROJECT_PATH 
 
@@ -153,7 +153,7 @@ ROOT_URLCONF = 'ureport_project.urls'
 WSGI_APPLICATION = 'ureport_project.wsgi.application'
 
 TEMPLATE_DIRS = (
-#     os.path.join(PROJECT_PATH, 'templates'),
+     os.path.join(PROJECT_PATH, 'templates'),
 )
 
 FIXTURE_DIRS = (

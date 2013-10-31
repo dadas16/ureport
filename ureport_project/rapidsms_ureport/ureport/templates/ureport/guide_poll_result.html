@@ -1,8 +1,12 @@
+{% extends "ureport_layout.html" %}
+
+{% block content %}
 <ul>
-        <h2>Responses from Guides to a given poll</h2>
+        <h2>Responses from scout to a given poll</h2>
 {% for r in responses %}
 <li>
     {{ r.message }}
 </li>
 {% endfor %}
 </ul>
+{% endblock %}

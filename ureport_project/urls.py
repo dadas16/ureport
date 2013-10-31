@@ -56,7 +56,7 @@ urlpatterns = patterns('',
     url(r'^engage/$', TemplateView.as_view(template_name='ureport/engage.html')),
     url(r'^getin/$', TemplateView.as_view(template_name='ureport/get_in_touch.html')),
     
-    url(r'^guide/$', TemplateView.as_view(template_name='ureport/guide_poll_result.html')),
+    url(r'^scout/$', TemplateView.as_view(template_name='ureport/scout_poll_result.html')),
     url(r'^redcross/$', TemplateView.as_view(template_name='ureport/redcross_poll_result.html')),
     url(r'^ureport-admin/$', 'ureport.views.ureport_content', {'slug':'ureport_home', 'base_template':'ureport/three-square.html', 'num_columns':3}, name='rapidsms-dashboard'),
 #    url('^accounts/login', 'rapidsms.views.login'),
