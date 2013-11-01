@@ -25,7 +25,7 @@ urlpatterns = patterns('',
                        url(r'^dashboard/$', poll_dashboard, name="poll_dashboard"),
 						# pages for viewing each poll report at it's own page
 					  
-                       url(r'^(?P<group>\w+)/$', poll_views.view_group_response, name='respo_of group'),
+                        url(r'^(?P<gp>\w+)/(?P<pol>\d+)/$', view_responses_of_gp_on_poll, name="rep"),
                                            
                        # ureporters (contact management views)
                        url(r'^reporter/$', ureporters, name="ureport-contact"),
