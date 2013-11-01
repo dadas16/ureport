@@ -418,6 +418,14 @@ def create_rule(request, pk):
 
         return HttpResponse(res)
     return HttpResponse("<td colspan='2'>Please enter all the fields</td>")
+    
+def view_group_response(request, group):
+    responses= Response.objects.filter(contact__groups__name=group)
+    polls = Poll.objects.filter(user__groups__name=group)
+    template = 'ureport/poll_group.html'
+    return render_to_response(template, {
+        'polls': polls,
+        }, context_instance=RequestContext(request))
 
 
 @login_required
