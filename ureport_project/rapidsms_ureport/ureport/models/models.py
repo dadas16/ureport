@@ -52,8 +52,8 @@ class TopResponses(models.Model):
 class EquatelLocation(models.Model):
     serial = models.CharField(max_length=50)
     segment = models.CharField(max_length=50, null=True)
-    location = models.ForeignKey(Location)
-    name = models.CharField(max_length=50, null=True)
+    #location = models.ForeignKey(Location)
+    #name = models.CharField(max_length=50, null=True)
 
     class Meta:
         app_label = 'ureport'
@@ -62,7 +62,7 @@ class EquatelLocation(models.Model):
 class Permit(models.Model):
     user = models.ForeignKey(User)
     allowed = models.CharField(max_length=200)
-    date = models.DateField(auto_now=True)
+   # date = models.DateField(auto_now=True)
 
     def get_patterns(self):
         pats = []
