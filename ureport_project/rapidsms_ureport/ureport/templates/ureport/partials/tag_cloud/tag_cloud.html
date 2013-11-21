@@ -140,7 +140,7 @@ tt a {
             {% endif %}
             rel="tag"
             class="tag_link" href="javascript:void(0)">{{ tag.tag }}</a>{% if user.is_authenticated %}<span class="default" onmouseover="$(this).attr('class', 'delete-tag-hover')" onmouseout="$(this).attr('class', 'default')" title="remove {{ tag.tag }}" onclick="add_tag( '{% url "ureport.views.add_drop_word" tag.tag poll.pk %}', '{% url "ureport.views.tag_cloud" poll.pk %}')"></span>{% endif %}
-    </tt>
+ </tt>
 {%  endfor %}
 </div>
 {% if user.is_authenticated %}
