@@ -35,7 +35,7 @@ def view_responses_of_gp_on_poll(req, gp, pol):
         template= 'ureport/poll_group.html'
         
         return render_to_response(template, {
-        'responses': responses,
+        
         'total_ureporters':number_of_members,
         'poll':p},
         context_instance=RequestContext(req)
