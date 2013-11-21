@@ -6,4 +6,4 @@ from .page_views import *
 from .poll_views import *
 from .ussd_views import *
 from .visualization_views import *
-from .responses_views import *
+from .response_views import *

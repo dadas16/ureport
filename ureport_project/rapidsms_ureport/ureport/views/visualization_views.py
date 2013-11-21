@@ -8,7 +8,7 @@ from django.utils.safestring import mark_safe
 from django.http import HttpResponse, Http404
 from ureport.models import IgnoredTags
 from django.contrib.auth.decorators import login_required
-from ureport.utils import retrieve_poll
+from ureport.utils import retrieve_poll, retrieve_poll2
 from django.views.decorators.cache import cache_control
 from poll.models import Poll
 import bisect
@@ -17,7 +17,7 @@ import datetime
 from eav.models import Value
 
 from poll.models import ResponseCategory, Response
-from ureport.views.utils.tags import _get_tags, _get_responses
+from ureport.views.utils.tags import _get_tags, _get_responses, _get_responses2, _get_tags2
 from django.db import transaction
 from django.conf import settings
 
@@ -50,10 +50,55 @@ def best_visualization(request, poll_id=None):
                     'responses': _get_responses(poll),
                     'poll_id': poll.pk,
                     })
+                    
+	print("0000000000000000000000000000000000000000000000000")
 
     return render_to_response('ureport/partials/viz/best_visualization.html'
                               , dict_to_render,
                               context_instance=RequestContext(request))
+
+
+
+
+@transaction.autocommit
+def best_visualization2(request, gp, poll_id=None):
+	
+    module = False
+    if 'module' in request.GET:
+        module = True
+    polls = retrieve_poll2(request, poll_id)
+    try:
+        poll = polls[0]
+    except IndexError:
+        raise Http404
+    try:
+        rate = poll.responses.count() * 100 / poll.contacts.count()
+    except ZeroDivisionError:
+        rate = 0
+    dict_to_render = {
+        'poll': poll,
+        'polls': [poll],
+        'unlabeled': True,
+        'module': module,
+        'rate': int(rate),
+        }
+    
+    #responses= Response.objects.filter(contact__groups__name=gp,poll__pk=poll_id)
+    #if poll.type == Poll.TYPE_TEXT and not  poll.categories.exists():
+    dict_to_render.update({'tagged': True,
+                               'tags': _get_tags2(gp, polls),
+                    'responses': Response.objects.filter(contact__groups__name=gp,poll__pk=poll_id),
+                    'poll_id': poll.pk,
+                    }),
+
+	
+    return render_to_response('ureport/partials/viz/best_visualization.html'
+                              , dict_to_render,
+                              context_instance=RequestContext(request))
+
+
+
+
 
 
 @login_required
