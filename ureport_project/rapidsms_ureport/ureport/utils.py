@@ -144,6 +144,20 @@ def retrieve_poll(request, pks=None):
         return Poll.objects.filter(pk__in=[pks]).exclude(pk__in=script_polls)
 
 
+
+def retrieve_poll2(request, pks=None):
+    script_polls = ScriptStep.objects.exclude(poll=None).values_list('poll', flat=True)
+    if pks == None:
+        pks = request.GET.get('pks', '')
+    not_showing = list(
+        PollAttribute.objects.filter(key='viewable', values__value='false').values_list('values__poll_id', flat=True))
+    not_showing = not_showing
+    if pks == 'l':
+        return [Poll.objects.exclude(pk__in=script_polls).exclude(pk__in=not_showing).exclude(start_date=None).latest('start_date')]
+
+    else:
+        return Poll.objects.filter(pk__in=[pks]).exclude(pk__in=script_polls)
+
 def get_flagged_messages(**kwargs):
     return MessageFlag.objects.all()
 
