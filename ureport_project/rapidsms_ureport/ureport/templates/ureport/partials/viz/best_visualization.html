@@ -56,9 +56,10 @@ CURRENT POLL
 {% if tagged %}
 	
 	{% ifequal poll.type 't' %}
+	<div id="visual_{{ poll.pk }}">
 		{% include "ureport/partials/tag_cloud/tag_cloud.html" %}
 	{% endifequal %}
-    
+      </div>
        <!-- {% if poll.top_responses.exists %}
         {% include "ureport/partials/viz/top_responses.html" %}
 		{% endif %}

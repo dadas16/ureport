@@ -2,7 +2,7 @@
 {% block message_information %}
 
     <td class="response_sender_col">
-      <a href="{% url ureport.views.ureporter_profile  response.message.connection.pk %}">
+      <a href="{% url "ureport.views.ureporter_profile"  response.message.connection.pk %}">
           {{ response.message.connection_id }}
       </a>
        at {{ response.message.date|date:"d/m/Y H:i" }}

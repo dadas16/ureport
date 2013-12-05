@@ -51,7 +51,7 @@ def best_visualization(request, poll_id=None):
                     'poll_id': poll.pk,
                     })
                     
-	print("0000000000000000000000000000000000000000000000000")
+	
 
     return render_to_response('ureport/partials/viz/best_visualization.html'
                               , dict_to_render,
@@ -82,7 +82,7 @@ def best_visualization2(request, gp, poll_id=None):
         'module': module,
         'rate': int(rate),
         }
-    
+    print("0000000000000000000000000000000000000000000000000")
     #responses= Response.objects.filter(contact__groups__name=gp,poll__pk=poll_id)
     #if poll.type == Poll.TYPE_TEXT and not  poll.categories.exists():
     dict_to_render.update({'tagged': True,
